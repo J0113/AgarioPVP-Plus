@@ -1,120 +1,18 @@
 // ==UserScript==
 // @name         Agariopvp.eu PLUS
 // @namespace    http://tampermonkey.net/
-// @version      2
+// @version      3
 // @description  Snel Mass schieter & Split automatisch, Nu ook vertaling!
 // @author       IkIsJolle
 // @match        *.agariopvp.eu/play/*
-// @grant        none
-// @run-at       document-end
+// @run-at       document-start
+// @grant        GM_getResourceText
+// @resource html https://jollesnaas.github.io/AgarioPVP-Plus/
 // ==/UserScript==
 
-var els = document.getElementsByTagName("*");
-for(var i = 0, l = els.length; i < l; i++) {
-  var el = els[i];
-  el.innerHTML = el.innerHTML.replace(/Clans/gi, '+ + Agar Plus + +');
-}
+//The @resource html is for the custom Index, view source here: https://github.com/jollesnaas/AgarioPVP-Plus
 
-var els = document.getElementsByTagName("*");
-for(var i = 0, l = els.length; i < l; i++) {
-  var el = els[i];
-  el.innerHTML = el.innerHTML.replace(/NL: Je moet inloggen voor het groepen systeem!/gi, 'Wat doet wat?');
-}
-
-var els = document.getElementsByTagName("*");
-for(var i = 0, l = els.length; i < l; i++) {
-  var el = els[i];
-  el.innerHTML = el.innerHTML.replace(/EN: You need to login for clan system!/gi, 'Houd W ingedrukt voor fast feed - Druk op A voor een Dubbele split - Druk op A + Spatie voor Triple Split - Druk op D voor Quadra Split (In 16e) - Muis stil + S stopt je met bewegen');
-}
-
-
-//vertaalt:
-var els = document.getElementsByTagName("*");
-for(var i = 0, l = els.length; i < l; i++) {
-  var el = els[i];
-  el.innerHTML = el.innerHTML.replace(/Hide Skins/gi, 'Verberg skins');
-}
-
-var els = document.getElementsByTagName("*");
-for(var i = 0, l = els.length; i < l; i++) {
-  var el = els[i];
-  el.innerHTML = el.innerHTML.replace(/Hide Chat/gi, 'Verberg Chat');
-}
-
-var els = document.getElementsByTagName("*");
-for(var i = 0, l = els.length; i < l; i++) {
-  var el = els[i];
-  el.innerHTML = el.innerHTML.replace(/Renkleri Gizle/gi, 'Geen Kleuren');
-}
-
-var els = document.getElementsByTagName("*");
-for(var i = 0, l = els.length; i < l; i++) {
-  var el = els[i];
-  el.innerHTML = el.innerHTML.replace(/Siyah Tema/gi, 'Zwart Thema');
-}
-
-var els = document.getElementsByTagName("*");
-for(var i = 0, l = els.length; i < l; i++) {
-  var el = els[i];
-  el.innerHTML = el.innerHTML.replace(/Puani G�ster/gi, 'Laat punten zien');
-}
-
-var els = document.getElementsByTagName("*");
-for(var i = 0, l = els.length; i < l; i++) {
-  var el = els[i];
-  el.innerHTML = el.innerHTML.replace(/Asit Modu/gi, 'Asit mode');
-}
-
-var els = document.getElementsByTagName("*");
-for(var i = 0, l = els.length; i < l; i++) {
-  var el = els[i];
-  el.innerHTML = el.innerHTML.replace(/Harita Gizle/gi, 'Verberg kaart');
-}
-
-var els = document.getElementsByTagName("*");
-for(var i = 0, l = els.length; i < l; i++) {
-  var el = els[i];
-  el.innerHTML = el.innerHTML.replace(/Kapat/gi, '');
-}
-
-var els = document.getElementsByTagName("*");
-for(var i = 0, l = els.length; i < l; i++) {
-  var el = els[i];
-  el.innerHTML = el.innerHTML.replace(/Duvar �izgi/gi, 'Geen rand');
-}
-
-var els = document.getElementsByTagName("*");
-for(var i = 0, l = els.length; i < l; i++) {
-  var el = els[i];
-  el.innerHTML = el.innerHTML.replace(/Saydam Vir�s/gi, 'Doorzichtbaar virus');
-}
-
-var els = document.getElementsByTagName("*");
-for(var i = 0, l = els.length; i < l; i++) {
-  var el = els[i];
-  el.innerHTML = el.innerHTML.replace(/Kalin Isim/gi, 'Grote naam');
-}
-
-var els = document.getElementsByTagName("*");
-for(var i = 0, l = els.length; i < l; i++) {
-  var el = els[i];
-  el.innerHTML = el.innerHTML.replace(/Kalin Kenar/gi, 'Geen naam');
-}
-
-var els = document.getElementsByTagName("*");
-for(var i = 0, l = els.length; i < l; i++) {
-  var el = els[i];
-  el.innerHTML = el.innerHTML.replace(/Kenar Gsterme /gi, 'Smooth');
-}
-
-var els = document.getElementsByTagName("*");
-for(var i = 0, l = els.length; i < l; i++) {
-  var el = els[i];
-  el.innerHTML = el.innerHTML.replace(/isimleri Gizle/gi, 'Toplijst uit');
-}
-
-
-//Start echt script
+//Mod Knoppen:
 
 window.addEventListener('keydown', keydown);
 window.addEventListener('keyup', keyup);
